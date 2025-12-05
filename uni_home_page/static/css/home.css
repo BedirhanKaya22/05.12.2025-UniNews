@@ -1,0 +1,123 @@
+/* ----------------------------------------------------
+   KOMPAKT MODERN HABER KARTI
+---------------------------------------------------- */
+.news-card-modern {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform .15s ease;
+}
+
+.news-card-modern:hover {
+    transform: translateY(-2px);
+}
+
+/* Daha küçük görsel */
+.news-media {
+    position: relative;
+}
+
+.news-media-img {
+    width: 100%;
+    height: 220px;   /* ↓↓↓ BURASI küçüldü */
+    object-fit: cover;
+    display: block;
+}
+
+/* Gündem etiketi */
+.news-media-chip {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #2563eb;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* İçerik */
+.news-body {
+    padding: 1.1rem 1.2rem; /* ↓↓↓ daha kompakt */
+}
+
+/* Üst bilgi */
+.news-body-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem; /* ↓ daha küçük */
+    margin-bottom: 0.4rem;
+    color: #555;
+}
+
+.news-tag {
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+/* Başlık */
+.news-title {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 1.2rem; /* ↓ daha küçük */
+    font-weight: 700;
+    color: #222;
+    line-height: 1.3;
+}
+
+/* Yazar satırı */
+.news-author-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.78rem; /* ↓ daha ince */
+    color: #666;
+    margin-bottom: 0.7rem;
+}
+
+.news-author-role {
+    background: #eef2ff;
+    color: #2563eb;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Açıklama */
+.news-desc {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 0.9rem; /* ↓ daha az boşluk */
+}
+
+/* Alt bar */
+.news-body-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-stats span {
+    margin-right: 10px;
+    color: #555;
+    font-size: 0.82rem;
+}
+
+.news-action {
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 4px 10px;
+    background: #eef4ff;
+    border-radius: 6px;
+}
+
+.news-action:hover {
+    text-decoration: underline;
+}

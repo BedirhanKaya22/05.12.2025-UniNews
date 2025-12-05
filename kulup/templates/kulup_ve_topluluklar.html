@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kulüpler & Topluluklar | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/kulup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <h1 class="page-title">Kulüpler ve Öğrenci Toplulukları</h1>
+        <p class="page-subtitle">Kampüs hayatını şekillendiren kulüpleri keşfet, ilgi alanına göre filtrele.</p>
+
+        <!-- ÜST FİLTRE + ARAMA -->
+        <div class="gundem-filter-row">
+            <span class="small text-muted">Tüm kulüpler listeleniyor (statik)</span>
+            <div class="filter-pills">
+                <button class="filter-pill active">Tümü</button>
+                <button class="filter-pill">Teknik</button>
+                <button class="filter-pill">Sanat &amp; Kültür</button>
+                <button class="filter-pill">Sosyal Sorumluluk</button>
+                <button class="filter-pill">Spor</button>
+            </div>
+        </div>
+
+        <!-- Filtre satırı -->
+        <div class="search-input-wrapper mb-3 d-flex gap-2">
+            <input type="text" class="search-input flex-grow-1" placeholder="Kulüp veya anahtar kelime ara...">
+            <button class="btn-secondary-custom">Filtre</button>
+        </div>
+
+        <!-- Kulüp 1 -->
+        <article class="club-card">
+            <div class="club-avatar club-ai">AI</div>
+            <div class="club-body">
+                <div class="club-header">
+                    <h2 class="club-title">Yapay Zeka ve Veri Bilimi Topluluğu</h2>
+                    <span class="club-type tech">Teknik Kulüp</span>
+                </div>
+                <p class="club-desc">
+                    Yapay zeka, veri bilimi ve yazılım geliştirmeye ilgi duyan öğrencilerin bir araya geldiği aktif bir topluluk.
+                </p>
+                <div class="chip-row">
+                    <span class="badge-chip">#AI</span>
+                    <span class="badge-chip">#python</span>
+                    <span class="badge-chip">#datascience</span>
+                    <span class="badge-chip">#machinelearning</span>
+                </div>
+                <div class="club-footer">
+                    <div class="club-meta">
+                        <span>125 üye</span>
+                        <span>•</span>
+                        <span>Haftalık etkinlik</span>
+                        <span>•</span>
+                        <span>Discord topluluğu</span>
+                    </div>
+                    <div class="club-actions">
+                        <button class="btn-secondary-custom btn-sm">Detay</button>
+                        <button class="btn-primary-custom btn-sm">Katıl</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Kulüp 2 -->
+        <article class="club-card">
+            <div class="club-avatar club-music"><i class="bi bi-music-note-beamed"></i></div>
+            <div class="club-body">
+                <div class="club-header">
+                    <h2 class="club-title">Müzik ve Sahne Sanatları Kulübü</h2>
+                    <span class="club-type art">Sanat &amp; Kültür</span>
+                </div>
+                <p class="club-desc">
+                    Konserler, açık mikrofon geceleri, tiyatro oyunları ve sahne arkası deneyimleriyle dolu renkli bir kulüp.
+                </p>
+                <div class="chip-row">
+                    <span class="badge-chip">#konser</span>
+                    <span class="badge-chip">#tiyatro</span>
+                    <span class="badge-chip">#performance</span>
+                </div>
+                <div class="club-footer">
+                    <div class="club-meta">
+                        <span>90 üye</span>
+                        <span>•</span>
+                        <span>Prova odası</span>
+                        <span>•</span>
+                        <span>Yıl sonu gösterisi</span>
+                    </div>
+                    <div class="club-actions">
+                        <button class="btn-secondary-custom btn-sm">Detay</button>
+                        <button class="btn-primary-custom btn-sm">Katıl</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Kulüp 3 -->
+        <article class="club-card">
+            <div class="club-avatar club-photo"><i class="bi bi-camera-fill"></i></div>
+            <div class="club-body">
+                <div class="club-header">
+                    <h2 class="club-title">Fotoğrafçılık ve Medya Topluluğu</h2>
+                    <span class="club-type social">Sosyal &amp; Medya</span>
+                </div>
+                <p class="club-desc">
+                    Fotoğraf yürüyüşleri, temel çekim teknikleri atölyeleri ve kampüs etkinliklerinde medya desteği sağlar.
+                </p>
+                <div class="chip-row">
+                    <span class="badge-chip">#fotograf</span>
+                    <span class="badge-chip">#video</span>
+                    <span class="badge-chip">#postproduction</span>
+                </div>
+                <div class="club-footer">
+                    <div class="club-meta">
+                        <span>65 üye</span>
+                        <span>•</span>
+                        <span>Atölye çalışmaları</span>
+                    </div>
+                    <div class="club-actions">
+                        <button class="btn-secondary-custom btn-sm">Detay</button>
+                        <button class="btn-primary-custom btn-sm">Katıl</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Kulüp 4 -->
+        <article class="club-card">
+            <div class="club-avatar club-sport"><i class="bi bi-trophy-fill"></i></div>
+            <div class="club-body">
+                <div class="club-header">
+                    <h2 class="club-title">Kampüs Spor ve Outdoor Kulübü</h2>
+                    <span class="club-type sport">Spor Kulübü</span>
+                </div>
+                <p class="club-desc">
+                    Futbol, basketbol turnuvaları, trekking ve doğa yürüyüşleri gibi pek çok fiziksel aktiviteyi organize eder.
+                </p>
+                <div class="chip-row">
+                    <span class="badge-chip">#futbol</span>
+                    <span class="badge-chip">#basketbol</span>
+                    <span class="badge-chip">#outdoor</span>
+                </div>
+                <div class="club-footer">
+                    <div class="club-meta">
+                        <span>110 üye</span>
+                        <span>•</span>
+                        <span>Haftalık antrenman</span>
+                    </div>
+                    <div class="club-actions">
+                        <button class="btn-secondary-custom btn-sm">Detay</button>
+                        <button class="btn-primary-custom btn-sm">Katıl</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <aside>
+        <section class="side-card">
+            <h3>Filtreler</h3>
+            <ul class="bullet-list">
+                <li>Teknik kulüpler</li>
+                <li>Sanat &amp; kültür kulüpleri</li>
+                <li>Sosyal sorumluluk toplulukları</li>
+                <li>Spor kulüpleri</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>En Aktif Kulüpler</h3>
+            <ul class="simple-list">
+                <li>Yapay Zeka ve Veri Bilimi Topluluğu</li>
+                <li>Girişimcilik Kulübü</li>
+                <li>Müzik ve Sahne Sanatları Kulübü</li>
+                <li>Fotoğrafçılık ve Medya Topluluğu</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>Kulübünü Eklemek İster misin?</h3>
+            <p class="side-text">
+                Kendi kulübünün UniNews’te listelenmesini istiyorsan, bizimle iletişime geç.
+            </p>
+            <button class="btn-primary-custom btn-block">Başvuru talebi gönder (mock)</button>
+        </section>
+    </aside>
+</div>
+{% endblock %}

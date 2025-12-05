@@ -1,0 +1,463 @@
+/* Profil başlık kartı */
+.profile-header-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    padding: 18px 18px 16px;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.profile-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2563eb, #22c55e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.profile-avatar.big {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+}
+
+.profile-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-main-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.profile-name {
+    font-size: 18px;
+    margin: 0;
+}
+
+.profile-username {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 2px 0 0;
+}
+
+.profile-role-badge {
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.profile-role-badge i {
+    font-size: 13px;
+}
+
+.profile-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.profile-meta-row i {
+    margin-right: 3px;
+}
+
+/* İstatistikler satırı */
+.profile-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.profile-stat {
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    min-width: 120px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.stat-value {
+    font-weight: 600;
+    font-size: 15px;
+    color: #111827;
+}
+
+/* Butonlar satırı */
+.profile-actions-row {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Sekmeler */
+.profile-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.profile-tabs .tab-btn {
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-soft);
+    background: #ffffff;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.profile-tabs .tab-btn.active {
+    background: var(--accent-soft);
+    border-color: var(--accent-soft);
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+/* Bölüm kartları */
+.profile-section-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    padding: 14px 16px 12px;
+    margin-bottom: 14px;
+}
+
+.section-header h3 {
+    font-size: 15px;
+    margin: 0 0 2px;
+}
+
+.section-header .section-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Profil ayarları grid */
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    margin-top: 10px;
+}
+
+.settings-group label {
+    font-size: 12px;
+    color: #4b5563;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.settings-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.settings-hint {
+    color: var(--text-muted);
+}
+
+/* Aktivite listesi (varsa kullanırsın) */
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.activity-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.activity-title {
+    margin: 0;
+    color: #111827;
+}
+
+.activity-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Aktivite tip badge’leri */
+.activity-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.activity-type.like {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.activity-type.comment {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.activity-type.favorite {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* Favoriler listesi */
+.favorites-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.favorites-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    font-size: 13px;
+}
+
+.fav-tag {
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.fav-tag.news {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.fav-tag.event {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.fav-tag.duyuru {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.fav-tag.club {
+    background: #fce7f3;
+    color: #be185d;
+}
+
+.fav-title {
+    margin: 0;
+    color: #111827;
+}
+
+/* Son görüntülenenler grid */
+.recent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+    margin-top: 10px;
+}
+
+.recent-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.recent-list li {
+    margin-bottom: 3px;
+}
+
+/* Haber yükle kartı */
+.news-upload-card .upload-info-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 8px 0 10px;
+}
+
+/* Sidebar küçük ek */
+.side-card .simple-list strong {
+    font-weight: 600;
+}
+
+/* ========== MODAL TASARIMI ========== */
+
+.news-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.news-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.news-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.news-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+    padding: 16px 18px 16px;
+    z-index: 1;
+}
+
+.news-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.news-modal-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.modal-close {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+/* Modal form alanları */
+.news-modal-form {
+    font-size: 13px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.modal-field {
+    margin-bottom: 8px;
+}
+
+.modal-field label {
+    display: block;
+    font-size: 12px;
+    color: #4b5563;
+    margin-bottom: 3px;
+}
+
+.modal-help-text {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.modal-note {
+    font-size: 12px;
+    color: #b45309;
+    margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-main-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .settings-grid,
+    .modal-grid,
+    .recent-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .activity-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .activity-meta {
+        align-self: flex-end;
+    }
+}

@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gündem | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/gundem.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <h1 class="page-title">Gündem</h1>
+        <p class="page-subtitle">Kampüste olup biten en sıcak gelişmeler.</p>
+
+        <!-- ÜST FİLTRE + ARAMA -->
+        <div class="gundem-filter-row">
+            <span class="small text-muted">Tüm gündem haberleri listeleniyor (statik)</span>
+            <div class="filter-pills">
+                <button class="filter-pill active">Tümü</button>
+                <button class="filter-pill">Son 24 Saat</button>
+                <button class="filter-pill">Bu Hafta</button>
+                <button class="filter-pill">Bu Ay</button>
+            </div>
+        </div>
+
+        <!-- Filtre satırı -->
+        <div class="search-input-wrapper mb-3 d-flex gap-2">
+            <input type="text" class="search-input flex-grow-1" placeholder="Kulüp veya anahtar kelime ara...">
+            <button class="btn-secondary-custom">Filtre</button>
+        </div>
+
+        <!-- Haber 1 -->
+        <article class="news-card news-card-modern">
+            <div class="news-media">
+                <img src="https://picsum.photos/seed/gundem1/900/450" class="news-media-img" alt="">
+                <div class="news-media-chip">
+                    <span class="chip-label">GÜNDEM</span>
+                </div>
+            </div>
+
+            <div class="news-body">
+                <!-- üst satır: kategori + tarih/saat -->
+                <div class="news-body-top">
+                    <span class="news-tag">Kampüs Haberleri</span>
+                    <span class="news-datetime">
+                        <i class="bi bi-calendar3"></i> 05.12.2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 14:32
+                    </span>
+                </div>
+
+                <h2 class="news-title mb-1">Kampüs Girişlerinde Yeni Güvenlik Uygulaması</h2>
+
+                <!-- ekleyen kişi -->
+                <div class="news-author-row">
+                    <span class="news-author">
+                        <i class="bi bi-person-badge"></i> UniNews Editör
+                    </span>
+                    <span class="news-author-role">Onaylı yayıncı</span>
+                </div>
+
+                <p class="news-desc">
+                    Kart okuyucu turnikeler yenilendi, giriş çıkışlar artık mobil uygulama ile de yapılabilecek.
+                </p>
+
+                <!-- alt bar: istatistikler + buton -->
+                <div class="news-body-bottom">
+                    <div class="news-stats">
+                        <span><i class="bi bi-eye"></i> 1.5K</span>
+                        <span><i class="bi bi-heart"></i> 102</span>
+                        <span><i class="bi bi-chat"></i> 8 yorum</span>
+                    </div>
+
+                    <a href="#" class="news-action">
+                        Devamını oku
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Haber 2 -->
+        <article class="news-card news-card-modern">
+            <div class="news-media">
+                <img src="https://picsum.photos/seed/gundem2/900/450" class="news-media-img" alt="">
+                <div class="news-media-chip">
+                    <span class="chip-label">GÜNDEM</span>
+                </div>
+            </div>
+
+            <div class="news-body">
+                <!-- üst satır: kategori + tarih -->
+                <div class="news-body-top">
+                    <span class="news-tag">Kampüs Haberleri</span>
+                    <span class="news-datetime">
+                        <i class="bi bi-calendar3"></i> 03.04.2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 11:20
+                    </span>
+                </div>
+
+                <h2 class="news-title mb-1">Yeni Yemekhane Menü Sistemi Teste Başladı</h2>
+
+                <!-- ekleyen kişi -->
+                <div class="news-author-row">
+                    <span class="news-author">
+                        <i class="bi bi-person-badge"></i> UniNews Editör
+                    </span>
+                    <span class="news-author-role">Onaylı yayıncı</span>
+                </div>
+
+                <p class="news-desc">
+                    Öğrenciler yemek menülerini mobil uygulama üzerinden oylayabilecek ve geri bildirim verebilecek.
+                </p>
+
+                <!-- alt bar kısmı -->
+                <div class="news-body-bottom">
+                    <div class="news-stats">
+                        <span><i class="bi bi-eye"></i> 780</span>
+                        <span><i class="bi bi-heart"></i> 41</span>
+                        <span><i class="bi bi-chat"></i> 23 yorum</span>
+                    </div>
+
+                    <a href="#" class="news-action">
+                        Devamını oku
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- İstersen buraya pagination da ekleyebilirsin -->
+        <!--
+        <div class="pagination-custom">
+            <button>Önceki</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>Sonraki</button>
+        </div>
+        -->
+    </section>
+
+    <!-- SAĞ TARAF / ASIDE -->
+    <aside>
+        <!-- En Çok Okunan Gündem -->
+        <section class="side-card">
+            <h3>En Çok Okunan Gündem</h3>
+            <ul class="simple-list">
+                <li>Kampüs Girişlerinde Yeni Güvenlik Uygulaması</li>
+                <li>Yurt Ücretlerinde Yapılan Güncelleme</li>
+                <li>Kütüphane Final Haftası Çalışma Saatleri</li>
+                <li>Bahar Şenliği Programı Yayınlandı</li>
+            </ul>
+        </section>
+
+        <!-- Yaklaşan Etkinlikler -->
+        <section class="side-card">
+            <h3>Yaklaşan Etkinlikler</h3>
+            <ul class="event-list">
+                <li>
+                    <span class="event-date">
+                        <span class="day">12</span>
+                        <span class="month">ARALIK</span>
+                    </span>
+                    <div class="event-info">
+                        <p class="event-title">Yapay Zeka Semineri</p>
+                        <p class="event-meta">Mühendislik Fakültesi Konferans Salonu</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="event-date">
+                        <span class="day">14</span>
+                        <span class="month">ARALIK</span>
+                    </span>
+                    <div class="event-info">
+                        <p class="event-title">E-Spor Turnuvası</p>
+                        <p class="event-meta">Spor Salonu</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="event-date">
+                        <span class="day">16</span>
+                        <span class="month">ARALIK</span>
+                    </span>
+                    <div class="event-info">
+                        <p class="event-title">Kariyer ve CV Atölyesi</p>
+                        <p class="event-meta">Kariyer Merkezi</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Trend Etiketler -->
+        <section class="side-card">
+            <h3>Trend Etiketler</h3>
+            <div class="tag-list">
+                <span>#final</span>
+                <span>#burs</span>
+                <span>#kampüsyaşamı</span>
+                <span>#erasmus</span>
+                <span>#staj</span>
+                <span>#hackathon</span>
+                <span>#baharşenliği</span>
+            </div>
+        </section>
+
+        <!-- Kampüs Anketi -->
+        <section class="side-card">
+            <h3>Kampüs Anketi</h3>
+            <p class="poll-question">Yeni kampüs giriş uygulamasını nasıl buldunuz?</p>
+            <div class="poll-options">
+                <button type="button" class="poll-option">👍 Çok iyi</button>
+                <button type="button" class="poll-option">👌 İdare eder</button>
+                <button type="button" class="poll-option">🛠 Geliştirilmeli</button>
+                <button type="button" class="poll-option">👎 Hiç beğenmedim</button>
+            </div>
+            <p class="poll-meta">Toplam oy: 482 (statik)</p>
+        </section>
+    </aside>
+</div>
+{% endblock %}

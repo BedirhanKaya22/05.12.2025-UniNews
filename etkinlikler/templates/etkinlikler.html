@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Etkinlikler | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/etkinlikler.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <h1 class="page-title">Etkinlikler</h1>
+        <p class="page-subtitle">Konserler, seminerler, atölyeler ve tüm kampüs etkinlikleri.</p>
+
+        <!-- ÜST FİLTRE + ARAMA -->
+        <div class="gundem-filter-row">
+            <span class="small text-muted">Tüm etkinlikler listeleniyor (statik)</span>
+            <div class="filter-pills">
+                <button class="filter-pill active">Tümü</button>
+                <button class="filter-pill">Bu Hafta</button>
+                <button class="filter-pill">Bu Ay</button>
+                <button class="filter-pill">Sadece Çevrim İçi</button>
+            </div>
+        </div>
+
+        <!-- Arama satırı -->
+        <div class="search-input-wrapper mb-3 d-flex gap-2">
+            <input type="text" class="search-input flex-grow-1" placeholder="Etkinlik veya kulüp ara...">
+            <button class="btn-secondary-custom">Filtre</button>
+        </div>
+
+        <!-- ETKİNLİK 1 – Bahar Şenliği -->
+        <article class="news-card event-card-modern">
+            <div class="event-media">
+                <img src="https://picsum.photos/seed/event1/900/450" class="event-media-img" alt="">
+                <div class="event-media-chip">
+                    <span class="chip-label">ETKİNLİK</span>
+                </div>
+            </div>
+
+            <div class="event-body">
+                <div class="event-body-top">
+                    <span class="event-tag">Konser</span>
+                    <span class="event-datetime">
+                        <i class="bi bi-calendar3"></i> 15 Nisan 2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 19:00
+                    </span>
+                </div>
+
+                <h2 class="event-title">Bahar Şenliği Açılış Konseri</h2>
+
+                <div class="event-organizer-row">
+                    <span class="event-organizer">
+                        <i class="bi bi-people-fill"></i> UniNews Bahar Şenliği Ekibi
+                    </span>
+                    <span class="event-location">
+                        <i class="bi bi-geo-alt"></i> Merkezi Kampüs - Açık Alan
+                    </span>
+                </div>
+
+                <p class="event-desc">
+                    Ana sahnede DJ performansı, ardından sürpriz grup konserleri ve gece boyunca sürecek aktiviteler...
+                </p>
+
+                <div class="event-body-bottom">
+                    <div class="event-stats">
+                        <span><i class="bi bi-person-check"></i> 320 kişi katılmayı planlıyor</span>
+                        <span><i class="bi bi-broadcast-pin"></i> Canlı müzik • Açık hava</span>
+                    </div>
+
+                    <a href="#" class="event-action">
+                        Detaylar
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ETKİNLİK 2 – Girişimcilik Söyleşisi -->
+        <article class="news-card event-card-modern">
+            <div class="event-media">
+                <img src="https://picsum.photos/seed/event2/900/450" class="event-media-img" alt="">
+                <div class="event-media-chip">
+                    <span class="chip-label">ETKİNLİK</span>
+                </div>
+            </div>
+
+            <div class="event-body">
+                <div class="event-body-top">
+                    <span class="event-tag">Söyleşi</span>
+                    <span class="event-datetime">
+                        <i class="bi bi-calendar3"></i> 20 Nisan 2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 14:00
+                    </span>
+                </div>
+
+                <h2 class="event-title">Girişimcilik ve Start-Up Söyleşisi</h2>
+
+                <div class="event-organizer-row">
+                    <span class="event-organizer">
+                        <i class="bi bi-person-badge"></i> Girişimcilik Kulübü
+                    </span>
+                    <span class="event-location">
+                        <i class="bi bi-geo-alt"></i> İİBF Konferans Salonu
+                    </span>
+                </div>
+
+                <p class="event-desc">
+                    Mezunlarımızdan kurduğu girişimlerle başarı yakalamış konuklar, deneyimlerini paylaşacak...
+                </p>
+
+                <div class="event-body-bottom">
+                    <div class="event-stats">
+                        <span><i class="bi bi-person-check"></i> 150 kayıtlı katılımcı</span>
+                        <span><i class="bi bi-wifi"></i> Kayıt olanlara online erişim</span>
+                    </div>
+
+                    <a href="#" class="event-action">
+                        Detaylar
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <div class="pagination-custom">
+            <button>Önceki</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Sonraki</button>
+        </div>
+    </section>
+
+    <aside>
+        <!-- Bugünün Etkinlikleri -->
+        <section class="side-card">
+            <h3>Bugünün Etkinlikleri</h3>
+            <ul class="event-mini-list">
+                <li>
+                    <span class="mini-date">
+                        <span class="day">05</span>
+                        <span class="month">ARA</span>
+                    </span>
+                    <div class="mini-info">
+                        <p class="mini-title">Kariyer Merkezi Tanıtımı</p>
+                        <p class="mini-meta">13:00 • Kariyer Merkezi</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="mini-date">
+                        <span class="day">05</span>
+                        <span class="month">ARA</span>
+                    </span>
+                    <div class="mini-info">
+                        <p class="mini-title">Erasmus Bilgilendirme Toplantısı</p>
+                        <p class="mini-meta">16:00 • Online</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kategori Etiketleri -->
+        <section class="side-card">
+            <h3>Kategori Etiketleri</h3>
+            <div class="tag-list event-tags">
+                <span>#konser</span>
+                <span>#söyleşi</span>
+                <span>#atölye</span>
+                <span>#spor</span>
+                <span>#kariyer</span>
+                <span>#online</span>
+                <span>#kulüpfest</span>
+            </div>
+        </section>
+
+        <!-- En Aktif Kulüpler -->
+        <section class="side-card">
+            <h3>En Aktif Kulüpler</h3>
+            <ul class="simple-list club-list">
+                <li>Girişimcilik Kulübü</li>
+                <li>Bilgisayar ve Yazılım Kulübü</li>
+                <li>Fotoğrafçılık Topluluğu</li>
+                <li>Müzik ve Sahne Sanatları Kulübü</li>
+            </ul>
+        </section>
+
+        <!-- Etkinlik İpuçları -->
+        <section class="side-card">
+            <h3>Etkinlik İpuçları</h3>
+            <ul class="bullet-list">
+                <li>Çoğu etkinlik için öğrenci kartını yanında bulundur.</li>
+                <li>Kontenjanlı etkinliklere önceden kayıt yaptır.</li>
+                <li>Online etkinliklerde bağlantı linki e-posta ile gelir.</li>
+                <li>Etkinlik sonrası geri bildirim formunu doldurmayı unutma.</li>
+            </ul>
+        </section>
+    </aside>
+</div>
+{% endblock %}

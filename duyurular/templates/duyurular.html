@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Duyurular | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/duyurular.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <h1 class="page-title">Duyurular</h1>
+        <p class="page-subtitle">Akademik, sınav, burs ve kampüs duyurularını tek ekrandan takip et.</p>
+
+        <!-- ÜST FİLTRE + ARAMA -->
+        <div class="ann-filter-row">
+            <span class="small text-muted">Tüm duyurular listeleniyor (statik)</span>
+            <div class="filter-pills">
+                <button class="filter-pill active">Tümü</button>
+                <button class="filter-pill">Akademik</button>
+                <button class="filter-pill">Sınav &amp; Takvim</button>
+                <button class="filter-pill">Burs</button>
+            </div>
+        </div>
+
+        <!-- Arama satırı -->
+        <div class="search-input-wrapper mb-3 d-flex gap-2">
+            <input type="text" class="search-input flex-grow-1"
+                   placeholder="Duyuruda ara (ör: burs, final, ders ekle-bırak)...">
+            <button class="btn-secondary-custom">Filtre</button>
+        </div>
+
+        <!-- Duyuru kart 1 -->
+        <article class="news-card ann-card">
+            <div class="news-card-inner">
+                <div class="news-content">
+
+                    <!-- KATEGORİ BADGE -->
+                    <div class="ann-category-row">
+                        <span class="ann-category-badge ann-cat-akademik">Akademik</span>
+                    </div>
+
+                    <div class="ann-meta-top">
+                        <span class="ann-date">
+                            <i class="bi bi-calendar3"></i> Yayınlanma: 02.03.2025
+                        </span>
+                        <span class="ann-publisher">
+                            <i class="bi bi-building"></i> Öğrenci İşleri Daire Başkanlığı
+                        </span>
+                    </div>
+
+                    <h2 class="news-title">Bahar Dönemi Ders Ekle-Bırak Tarihleri</h2>
+
+                    <p class="news-desc">
+                        2024–2025 bahar yarıyılı için ders ekle-bırak işlemleri 4–8 Mart tarihleri arasında
+                        öğrenci bilgi sistemi üzerinden yapılacaktır.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="badge-chip">#akademiktakvim</span>
+                        <span class="badge-chip">#derskaydı</span>
+                    </div>
+
+                    <div class="ann-actions">
+                        <button class="btn-secondary-custom btn-sm">
+                            <i class="bi bi-file-earmark-text me-1"></i> PDF'yi Gör
+                        </button>
+                        <button class="btn-primary-custom btn-sm">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Detay
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+        <!-- Duyuru kart 2 -->
+        <article class="news-card ann-card">
+            <div class="news-card-inner">
+                <div class="news-content">
+
+                    <!-- KATEGORİ BADGE -->
+                    <div class="ann-category-row">
+                        <span class="ann-category-badge ann-cat-exam">Sınav &amp; Takvim</span>
+                    </div>
+
+                    <div class="ann-meta-top">
+                        <span class="ann-date">
+                            <i class="bi bi-calendar3"></i> Yayınlanma: 28.02.2025
+                        </span>
+                        <span class="ann-publisher">
+                            <i class="bi bi-building"></i> Mühendislik Fakültesi Dekanlığı
+                        </span>
+                    </div>
+
+                    <h2 class="news-title">Bahar Dönemi Vize Sınav Takvimi Yayınlandı</h2>
+
+                    <p class="news-desc">
+                        Mühendislik Fakültesi için bölüm bazlı vize sınav programı yayınlanmıştır.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="badge-chip">#vize</span>
+                        <span class="badge-chip">#sınavtakvimi</span>
+                    </div>
+
+                    <div class="ann-actions">
+                        <button class="btn-secondary-custom btn-sm">
+                            <i class="bi bi-download me-1"></i> Takvimi İndir
+                        </button>
+                        <button class="btn-primary-custom btn-sm">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Detay
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+        <!-- Duyuru kart 3 – Burs örneği -->
+        <article class="news-card ann-card">
+            <div class="news-card-inner">
+                <div class="news-content">
+
+                    <div class="ann-category-row">
+                        <span class="ann-category-badge ann-cat-burs">Burs</span>
+                    </div>
+
+                    <div class="ann-meta-top">
+                        <span class="ann-date">
+                            <i class="bi bi-calendar3"></i> Yayınlanma: 25.02.2025
+                        </span>
+                        <span class="ann-publisher">
+                            <i class="bi bi-building"></i> Burs ve Sosyal Destek Birimi
+                        </span>
+                    </div>
+
+                    <h2 class="news-title">2025 Güz Dönemi Başarı Bursu Başvuruları</h2>
+
+                    <p class="news-desc">
+                        Akademik ortalaması 3.00 ve üzeri olan öğrenciler için başarı bursu başvuruları açılmıştır.
+                        Son başvuru tarihi 10 Mart 2025'tir.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="badge-chip">#burs</span>
+                        <span class="badge-chip">#başarı</span>
+                    </div>
+
+                    <div class="ann-actions">
+                        <button class="btn-secondary-custom btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Başvuru Formu
+                        </button>
+                        <button class="btn-primary-custom btn-sm">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Detay
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+        <div class="pagination-custom">
+            <button>Önceki</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Sonraki</button>
+        </div>
+    </section>
+
+    <aside>
+        <!-- Önemli Tarihler -->
+        <section class="side-card">
+            <h3>Önemli Tarihler</h3>
+            <ul class="date-list">
+                <li>
+                    <span class="date-pill">4–8 Mart</span>
+                    <span class="date-text">Ders ekle-bırak haftası</span>
+                </li>
+                <li>
+                    <span class="date-pill">15 Mart</span>
+                    <span class="date-text">Vize sınav takvimi son güncelleme</span>
+                </li>
+                <li>
+                    <span class="date-pill">10 Mart</span>
+                    <span class="date-text">Başarı bursu son başvuru tarihi</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Burs & Başvuru Son Günler -->
+        <section class="side-card">
+            <h3>Burs &amp; Başvuru Son Günler</h3>
+            <ul class="simple-list">
+                <li>Yemek bursu başvuruları – 05 Mart</li>
+                <li>Yurt ücreti taksitlendirme – 12 Mart</li>
+                <li>Uluslararası değişim programı – 20 Mart</li>
+            </ul>
+        </section>
+
+        <!-- Sık Kullanılan Linkler -->
+        <section class="side-card">
+            <h3>Sık Kullanılan Linkler</h3>
+            <ul class="link-list">
+                <li><a href="#">Öğrenci Bilgi Sistemi</a></li>
+                <li><a href="#">Akademik Takvim</a></li>
+                <li><a href="#">Sınav Yönetmelikleri</a></li>
+                <li><a href="#">Burs Yönergesi</a></li>
+            </ul>
+        </section>
+
+        <!-- Sınav Haftası İpuçları -->
+        <section class="side-card">
+            <h3>Sınav Haftası İpuçları</h3>
+            <ul class="bullet-list">
+                <li>Sınav saatini ve salonunu en az bir gün önce kontrol et.</li>
+                <li>Kimlik kartını yanına almayı unutma.</li>
+                <li>Online sınavlarda bağlantı ve cihazını önceden test et.</li>
+                <li>Ders sorumlularının duyurularını düzenli kontrol et.</li>
+            </ul>
+        </section>
+    </aside>
+</div>
+{% endblock %}

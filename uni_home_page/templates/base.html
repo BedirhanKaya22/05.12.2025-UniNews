@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}UniNews - Üniversite Haberleri{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Ortak custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {# Sayfa özel CSS dosyaları #}
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="uninews-body">
+
+<!-- Üst mini bar -->
+<div class="topbar py-1">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 small">
+            <i class="bi bi-broadcast-pin"></i>
+            <span>UniNews • Kampüsün Nabzı Burada</span>
+        </div>
+        <div class="d-flex align-items-center gap-3 small">
+            <span class="d-none d-md-inline">
+                <i class="bi bi-geo-alt me-1"></i>
+                Mevcut Üniversite: <strong>Örnek Üniversitesi</strong>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Ana navbar -->
+<nav class="main-nav">
+    <div class="container d-flex align-items-center justify-content-between nav-inner">
+        <a href="{% url 'home' %}" class="logo text-decoration-none">
+
+            <div class="logo-icon">
+                <img src="{% static 'img/uninews-logo.png' %}" alt="UniNews Logo">
+            </div>
+
+            <div class="logo-text">UniNews</div>
+        </a>
+
+        <ul class="nav-links list-unstyled mb-0">
+            <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Ana Sayfa</a></li>
+            <li><a href="{% url 'gundem' %}" class="{% if request.resolver_match.url_name == 'gundem' %}active{% endif %}">Gündem</a></li>
+            <li><a href="{% url 'etkinlikler' %}" class="{% if request.resolver_match.url_name == 'etkinlikler' %}active{% endif %}">Etkinlikler</a></li>
+            <li><a href="{% url 'duyurular' %}" class="{% if request.resolver_match.url_name == 'duyurular' %}active{% endif %}">Duyurular</a></li>
+            <li><a href="{% url 'kulup' %}" class="{% if request.resolver_match.url_name == 'kulup' %}active{% endif %}">Kulüpler &amp; Topluluklar</a></li>
+        </ul>
+
+            <div class="nav-right">
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'profile_view' %}" 
+                    class="nav-user-link {% if request.resolver_match.url_name == 'profile_view' %}active{% endif %}">
+                        <i class="bi bi-person-circle"></i> {{ request.user.username }}
+                    </a>
+                        <!-- Çıkış Yap -->
+                        <a href="{% url 'logout' %}" class="text-decoration-none topbar-link">
+                            <i class="bi bi-box-arrow-right me-1" style="color: #000000ff"></i>
+                            <span style="color: #000000ff ">Çıkış Yap</span>
+                        </a>
+
+                        <!-- Sadece SUPER USER için Admin Paneli -->
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'admin:index' %}" class="btn btn-sm btn-s ms-2">
+                            <i class="bi bi-gear-fill me-1" style="color: ##000000ff"></i>
+                            <span style="color: #000000ff ">Admin Paneli</span>
+                        </a>
+                    {% endif %}
+
+                    {% else %}
+                        <!-- Giriş Kayıt -->
+                        <a href="{% url 'login' %}" class="text-decoration-none topbar-link">
+                            <i class="bi bi-person-circle me-1" style="color: #000000ff"></i>
+                            <span style="color: #000000ff ">Giriş / Kayıt</span>
+                        </a>
+                    {% endif %}
+            </div>
+    </div>
+</nav>
+
+<main class="page">
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</main>
+
+<footer class="mt-4">
+    <div class="container footer-inner">
+        <div>
+            <div class="footer-col-title">UniNews</div>
+            <p class="footer-text">UniNews, öğrencilerin hazırladığı bir kampüs haber platformudur.</p>
+        </div>
+        <div>
+            <div class="footer-col-title">Keşfet</div>
+            <ul class="footer-links">
+                <li><a href="#">Trend Haberler</a></li>
+                <li><a href="#">Yaklaşan Etkinlikler</a></li>
+                <li><a href="#">Kulüp Duyuruları</a></li>
+                <li><a href="#">Kariyer &amp; Staj</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Bize Katıl</div>
+            <ul class="footer-links">
+                <li><a href="#">UniNews ekibine katıl</a></li>
+                <li><a href="#">Kampüs muhabiri ol</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS (gerekirse) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

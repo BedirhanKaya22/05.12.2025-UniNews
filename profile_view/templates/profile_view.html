@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profilim | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <h1 class="page-title">Profilim</h1>
+        <p class="page-subtitle">Hesabını yönet, beğendiğin haberleri ve son görüntülediklerini tek ekrandan takip et.</p>
+
+        <!-- ÜST PROFİL KARTI -->
+        <article class="profile-header-card">
+            <div class="profile-avatar big">
+                <span>{{ request.user.username|first|upper }}</span>
+            </div>
+
+            <div class="profile-main">
+                <div class="profile-main-top">
+                    <div>
+                        <h2 class="profile-name">{{ request.user.get_full_name|default:request.user.username }}</h2>
+                        <p class="profile-username">@{{ request.user.username }}</p>
+                    </div>
+                    <span class="profile-role-badge">
+                        <i class="bi bi-mortarboard-fill"></i> Öğrenci (mock)
+                    </span>
+                </div>
+
+                <div class="profile-meta-row">
+                    <span><i class="bi bi-geo-alt"></i> Örnek Üniversitesi</span>
+                    <span><i class="bi bi-book"></i> Bilgisayar Mühendisliği</span>
+                    <span><i class="bi bi-calendar3"></i> UniNews’e katılım: 2025</span>
+                </div>
+
+                <div class="profile-stats-row">
+                    <div class="profile-stat">
+                        <span class="stat-label">Beğendiğin haber</span>
+                        <span class="stat-value">18</span>
+                    </div>
+                    <div class="profile-stat">
+                        <span class="stat-label">Yorum</span>
+                        <span class="stat-value">42</span>
+                    </div>
+                    <div class="profile-stat">
+                        <span class="stat-label">Katıldığın etkinlik</span>
+                        <span class="stat-value">7</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions-row">
+                    <button class="btn-secondary-custom btn-sm">Profili Düzenle (mock)</button>
+                    <button class="btn-outline btn-sm">Bildirim Ayarları</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SEKMELER (görsel amaçlı) -->
+        <div class="profile-tabs">
+            <button class="tab-btn active">Profil Ayarları</button>
+            <button class="tab-btn">Beğendiğim Haberler</button>
+            <button class="tab-btn">Son Görüntülenenler</button>
+            <button class="tab-btn">Haber Yükle</button>
+        </div>
+
+        <!-- PROFİL AYARLARI KARTI -->
+        <article class="profile-section-card">
+            <div class="section-header">
+                <h3>Profil Ayarları</h3>
+                <span class="section-subtitle">Temel hesap bilgilerini buradan yönetebilmen için tasarlanmış (şimdilik statik).</span>
+            </div>
+
+            <div class="settings-grid">
+                <div class="settings-group">
+                    <label>Kullanıcı adı</label>
+                    <input type="text" class="form-control-custom" value="{{ request.user.username }}" disabled>
+                </div>
+                <div class="settings-group">
+                    <label>E-posta</label>
+                    <input type="email" class="form-control-custom" value="{{ request.user.email }}" disabled>
+                </div>
+                <div class="settings-group">
+                    <label>Üniversite (mock)</label>
+                    <input type="text" class="form-control-custom" value="Örnek Üniversitesi" disabled>
+                </div>
+                <div class="settings-group">
+                    <label>Bölüm (mock)</label>
+                    <input type="text" class="form-control-custom" value="Bilgisayar Mühendisliği" disabled>
+                </div>
+            </div>
+
+            <div class="settings-footer">
+                <span class="settings-hint">
+                    Ayrıntılı profil düzenleme ve avatar yükleme özelliği ileride eklenecek (mock).
+                </span>
+                <button class="btn-secondary-custom btn-sm">Profili düzenlemeyi başlat (mock)</button>
+            </div>
+        </article>
+
+        <!-- BEĞENDİĞİM HABERLER -->
+        <article class="profile-section-card">
+            <div class="section-header">
+                <h3>Beğendiğim Haberler</h3>
+                <span class="section-subtitle">UniNews’te kalp bıraktığın haber ve etkinliklerden kısa bir liste.</span>
+            </div>
+
+            <ul class="favorites-list">
+                <li>
+                    <span class="fav-tag news">GÜNDEM</span>
+                    <p class="fav-title">Kütüphane Final Haftasında 24 Saat Açık</p>
+                </li>
+                <li>
+                    <span class="fav-tag event">ETKİNLİK</span>
+                    <p class="fav-title">Bahar Şenliği Açılış Konseri</p>
+                </li>
+                <li>
+                    <span class="fav-tag duyuru">DUYURU</span>
+                    <p class="fav-title">Bahar Dönemi Ders Ekle-Bırak Tarihleri</p>
+                </li>
+                <li>
+                    <span class="fav-tag club">KULÜP</span>
+                    <p class="fav-title">Yapay Zeka ve Veri Bilimi Topluluğu Tanışma Toplantısı</p>
+                </li>
+            </ul>
+        </article>
+
+        <!-- SON GÖRÜNTÜLENENLER -->
+        <article class="profile-section-card">
+            <div class="section-header">
+                <h3>Son Görüntülediklerim</h3>
+                <span class="section-subtitle">Gündem, etkinlik, duyuru ve kulüpler sayfalarında en son baktığın içerikler.</span>
+            </div>
+
+            <div class="recent-grid">
+                <div>
+                    <h4 class="recent-title">Gündem</h4>
+                    <ul class="recent-list">
+                        <li>Kampüs Girişlerinde Yeni Güvenlik Uygulaması</li>
+                        <li>Yeni Yemekhane Menü Sistemi Teste Başladı</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="recent-title">Etkinlikler</h4>
+                    <ul class="recent-list">
+                        <li>Bahar Şenliği Açılış Konseri</li>
+                        <li>Girişimcilik ve Start-Up Söyleşisi</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="recent-title">Duyurular</h4>
+                    <ul class="recent-list">
+                        <li>Bahar Dönemi Vize Sınav Takvimi Yayınlandı</li>
+                        <li>2025 Güz Dönemi Başarı Bursu Başvuruları</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="recent-title">Kulüpler &amp; Topluluklar</h4>
+                    <ul class="recent-list">
+                        <li>Yapay Zeka ve Veri Bilimi Topluluğu</li>
+                        <li>Müzik ve Sahne Sanatları Kulübü</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- HABER YÜKLE BÖLÜMÜ -->
+        <article class="profile-section-card news-upload-card">
+            <div class="section-header">
+                <h3>Haber Yükle</h3>
+                <span class="section-subtitle">
+                    Kampüste olan bitenleri UniNews ile paylaş. Aşağıdaki butona tıklayarak haber formunu doldurabilirsin.
+                </span>
+            </div>
+
+            <p class="upload-info-text">
+                Gönderdiğin haber önce moderasyon ekibimiz tarafından kontrol edilir. Uygun görülen haberler ilgili
+                kategori altında yayımlanır.
+            </p>
+
+            <button type="button"
+                    class="btn-primary-custom btn-sm"
+                    onclick="openNewsModal()">
+                <i class="bi bi-plus-circle me-1"></i> Haber Yükle
+            </button>
+        </article>
+    </section>
+
+    <aside>
+        <section class="side-card">
+            <h3>Hesap Özeti</h3>
+            <ul class="simple-list">
+                <li>Profil tamamlama oranı: <strong>%80</strong></li>
+                <li>Bağlı e-posta: {{ request.user.email|default:"ornek.ogrenci@uninews.edu" }}</li>
+                <li>Bildirimler: Açık (haber &amp; etkinlik)</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>Hızlı İşlemler</h3>
+            <ul class="bullet-list">
+                <li>Şifre değiştirme</li>
+                <li>Giriş kayıtlarını görüntüle</li>
+                <li>E-posta bildirim tercihlerini güncelle</li>
+                <li>Hesabımı geçici olarak devre dışı bırak</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>Profil İpuçları</h3>
+            <ul class="bullet-list">
+                <li>Gerçek üniversiteni ve bölümünü ekle, öneriler daha anlamlı olsun.</li>
+                <li>Favori etiketlerini belirle, ana sayfada sana özel içerikler gösterilebilir.</li>
+                <li>Etkinliklere “katılıyorum” işareti koyarak kişisel takvimini oluştur.</li>
+            </ul>
+        </section>
+    </aside>
+</div>
+
+<!-- HABER YÜKLE MODAL PENCERESİ -->
+<div class="news-modal" id="newsModal">
+    <div class="news-modal-backdrop" onclick="closeNewsModal()"></div>
+
+    <div class="news-modal-dialog">
+        <div class="news-modal-header">
+            <h2>Haber Yükle</h2>
+            <button type="button" class="modal-close" onclick="closeNewsModal()">&times;</button>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" class="news-modal-form">
+            {% csrf_token %}
+            <div class="modal-grid">
+                <div class="modal-field">
+                    <label for="id_username">Kullanıcı adı</label>
+                    <input id="id_username" type="text" name="username"
+                           class="form-control-custom"
+                           value="{{ request.user.username }}" readonly>
+                </div>
+                <div class="modal-field">
+                    <label for="id_email">E-posta</label>
+                    <input id="id_email" type="email" name="email"
+                           class="form-control-custom"
+                           value="{{ request.user.email }}" readonly>
+                </div>
+                <div class="modal-field">
+                    <label for="id_title">Haber başlığı</label>
+                    <input id="id_title" type="text" name="title"
+                           class="form-control-custom"
+                           placeholder="Örnek: Kütüphane Final Haftasında 24 Saat Açık">
+                </div>
+                <div class="modal-field">
+                    <label for="id_category">Kategori</label>
+                    <select id="id_category" name="category" class="form-control-custom">
+                        <option value="gundem">Gündem</option>
+                        <option value="etkinlikler">Etkinlikler</option>
+                        <option value="duyurular">Duyurular</option>
+                        <option value="kulupler">Kulüpler &amp; Topluluklar</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-field">
+                <label for="id_summary">Kısa açıklama (isteğe bağlı)</label>
+                <input id="id_summary" type="text" name="summary"
+                       class="form-control-custom"
+                       placeholder="Haberi birkaç cümleyle özetle...">
+            </div>
+
+            <div class="modal-field">
+                <label for="id_content">Haber içeriği</label>
+                <textarea id="id_content" name="content" rows="5"
+                          class="form-control-custom"
+                          placeholder="Haberi detaylıca anlat, tarih ve yeri eklemeyi unutma..."></textarea>
+            </div>
+
+            <div class="modal-field">
+                <label for="id_files">Dosya / fotoğraf yükle</label>
+                <input id="id_files" type="file" name="files" multiple class="form-control-custom">
+                <span class="modal-help-text">Birden fazla görsel veya PDF ekleyebilirsin (mock).</span>
+            </div>
+
+            <p class="modal-note">
+                Not: Haberiniz admin tarafından onaylandıktan sonra yayımlanacaktır.
+            </p>
+
+            <button type="submit" class="btn-primary-custom btn-block">
+                Haber Yolla
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openNewsModal() {
+        document.getElementById('newsModal').classList.add('show');
+    }
+
+    function closeNewsModal() {
+        document.getElementById('newsModal').classList.remove('show');
+    }
+</script>
+{% endblock %}

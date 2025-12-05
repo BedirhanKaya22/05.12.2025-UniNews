@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Giriş Yap | UniNews{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="full-page-center">
+    <div class="auth-card">
+        <div class="text-center mb-2">
+            <div class="logo-icon">
+                <img src="{% static 'img/uninews-logo.png' %}" alt="UniNews Logo">
+            </div>
+        </div>
+        <h1 class="auth-title">UniNews’e Giriş Yap</h1>
+        <p class="auth-subtitle">Kampüs haberlerini takip et, favorilerine ekle, yorum yap.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group-custom">
+                <label for="username">Kullanıcı adı veya E-posta</label>
+                <input type="text" id="username" name="username" class="form-control-custom"
+                       placeholder="ornek.ogrenci@uninews.edu">
+            </div>
+
+            <div class="form-group-custom">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" class="form-control-custom" placeholder="•••••••">
+            </div>
+
+            <div class="form-inline-custom">
+                <div class="form-check m-0">
+                    <input class="form-check-input" type="checkbox" id="remember">
+                    <label class="form-check-label small" for="remember">Beni hatırla</label>
+                </div>
+                <a href="{% url 'password_reset' %}" class="link-muted">Şifremi unuttum</a>
+            </div>
+
+            <button type="submit" class="btn-primary-custom btn-block mb-2">Giriş Yap</button>
+
+            <div class="divider">
+                <span>veya</span>
+            </div>
+
+            <button type="button" class="btn-secondary-custom btn-block mb-2">
+                <i class="bi bi-google me-2"></i>Google ile devam et
+            </button>
+
+            <p class="text-center-small mt-1">
+                Hesabın yok mu?
+                <a href="{% url 'register' %}" class="link-muted">Kayıt ol</a>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

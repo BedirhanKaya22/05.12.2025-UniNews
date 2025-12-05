@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}UniNews - Ana Sayfa{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-two-column">
+    <section>
+        <article class="hero-card">
+            <div class="hero-badge">BUGÜN KAMPÜSTE</div>
+            <h1>Kampüsün <span class="highlight">nabzını</span> UniNews ile tut.</h1>
+            <p>Etkinlikler, duyurular, kulüpler ve çok daha fazlası. Hepsi tek bir yerde, öğrencilerin dilinden.</p>
+            <div class="hero-actions">
+                <button class="btn-primary-custom">Trend Haberler</button>
+                <button class="btn-secondary-custom">Etkinlik Takvimi</button>
+            </div>
+            <div class="hero-tags">
+                <span>#burs</span>
+                <span>#baharşenliği</span>
+                <span>#hackathon</span>
+                <span>#kulüpfest</span>
+            </div>
+        </article>
+
+        <!-- HABER 1 - Modern Card -->
+        <article class="news-card news-card-modern">
+            <div class="news-media">
+                <img src="https://picsum.photos/seed/uni1/900/450" class="news-media-img" alt="">
+                <div class="news-media-chip">
+                    <span class="chip-label">GÜNDEM</span>
+                </div>
+            </div>
+
+            <div class="news-body">
+                <!-- üst satır: kategori + tarih/saat -->
+                <div class="news-body-top">
+                    <span class="news-tag">Kampüs Haberleri</span>
+                    <span class="news-datetime">
+                        <i class="bi bi-calendar3"></i> 05.12.2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 09:15
+                    </span>
+                </div>
+
+                <h2 class="news-title mb-1">Kütüphane Final Haftasında 24 Saat Açık</h2>
+
+                <!-- ekleyen kişi -->
+                <div class="news-author-row">
+                    <span class="news-author">
+                        <i class="bi bi-person-badge"></i> UniNews Editör
+                    </span>
+                    <span class="news-author-role">Onaylı yayıncı</span>
+                </div>
+
+                <p class="news-desc">
+                    Final sezonu boyunca kütüphane 24 saat açık olacak. Çalışma salonları, grup çalışması alanları ve sessiz bölümler güncellendi.
+                </p>
+
+                <!-- alt bar: istatistikler + buton -->
+                <div class="news-body-bottom">
+                    <div class="news-stats">
+                        <span><i class="bi bi-eye"></i> 2.1K</span>
+                        <span><i class="bi bi-heart"></i> 134</span>
+                        <span><i class="bi bi-chat"></i> 19 yorum</span>
+                    </div>
+
+                    <a href="#" class="news-action">
+                        Haberi oku
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- HABER 2 - Modern Card -->
+        <article class="news-card news-card-modern">
+            <div class="news-media">
+                <img src="https://picsum.photos/seed/mezuniyet/900/450" class="news-media-img" alt="">
+                <div class="news-media-chip">
+                    <span class="chip-label">ETKİNLİK</span>
+                </div>
+            </div>
+
+            <div class="news-body">
+                <!-- üst satır: kategori + tarih/saat -->
+                <div class="news-body-top">
+                    <span class="news-tag">Etkinlikler</span>
+                    <span class="news-datetime">
+                        <i class="bi bi-calendar3"></i> 12.05.2025
+                        <span class="dot">•</span>
+                        <i class="bi bi-clock"></i> 18:00
+                    </span>
+                </div>
+
+                <h2 class="news-title mb-1">Bahar Şenliği Tarihleri Açıklandı</h2>
+
+                <!-- ekleyen kişi -->
+                <div class="news-author-row">
+                    <span class="news-author">
+                        <i class="bi bi-person-badge"></i> UniNews Etkinlik Ekibi
+                    </span>
+                    <span class="news-author-role">Resmi duyuru</span>
+                </div>
+
+                <p class="news-desc">
+                    Konserler, atölyeler, kulüp stantları ve sürpriz etkinliklerle dolu bir program açıklandı.
+                </p>
+
+                <!-- alt bar: istatistikler + buton -->
+                <div class="news-body-bottom">
+                    <div class="news-stats">
+                        <span><i class="bi bi-eye"></i> 1.2K</span>
+                        <span><i class="bi bi-heart"></i> 87</span>
+                        <span><i class="bi bi-chat"></i> 32 yorum</span>
+                    </div>
+
+                    <a href="#" class="news-action">
+                        Devamını oku
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <aside>
+        <section class="side-card">
+            <h3>Anlık Duyurular</h3>
+            <ul class="bullet-list">
+                <li>Final sınav takvimi güncellendi.</li>
+                <li>Yurt başvuruları için son gün: 20 Nisan.</li>
+                <li>Kariyer günleri başvuruları açıldı.</li>
+                <li>Robotik kulübü yeni üyeler arıyor.</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>Trend Etiketler</h3>
+            <div class="tag-list">
+                <span>#burs</span>
+                <span>#erasmus</span>
+                <span>#yazokulu</span>
+                <span>#gönüllülük</span>
+                <span>#girişimcilik</span>
+                <span>#sporturnuvası</span>
+            </div>
+        </section>
+
+        <section class="side-card">
+            <h3>Popüler Haberler</h3>
+            <ul class="simple-list">
+                <li>Öğrenci Konseyi Seçim Sonuçları Açıklandı</li>
+                <li>Kariyer Günleri’ne Rekor Katılım</li>
+                <li>Yeni Açılan Çalışma Alanları Tanıtıldı</li>
+            </ul>
+        </section>
+
+        <section class="side-card">
+            <h3>Hızlı Duyurular</h3>
+            <ul class="simple-list">
+                <li>Yaz okulu kayıtları 1 Haziran’da başlıyor.</li>
+                <li>Teknofest proje başvuruları devam ediyor.</li>
+            </ul>
+        </section>
+    </aside>
+</div>
+{% endblock %}
